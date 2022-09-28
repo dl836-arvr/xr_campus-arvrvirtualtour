@@ -12,14 +12,14 @@
     <!--       importing assets -->
     <a-assets>
       <!--         carriglea 360 pic -->
-      <img id="carrig" src="../assets/carrig.jpg"
+      <img id="carrig" src="assets/carrig.jpg"
         crossorigin="anonymous" />
       <!--         carriglea floor plan -->
       <img id="rooms"
-        src="../assets/carrigmap.png" />
+        src="assets/carrigmap.png" />
       <!--         crossing 360 pic -->
       <img id="back"
-        src="../assets/crossing.jpg" />
+        src="assets/crossing.jpg" />
     </a-assets>
 
     <!-- camera -->
@@ -35,12 +35,12 @@
 
     <!--       link to the crossing -->
     <a-text font="kelsonsans" value="Crossing" width="4" position="0.575 0.2 3.068" rotation="0 180 0" color="#ff6900"
-      link="href:../crossing/crossing.html; on:click" scale="1.5 1.5 1.5"></a-text>
+      link="href:crossing.html; on:click" scale="1.5 1.5 1.5"></a-text>
 
     <!--       spinning sphere with crossing image -->
     <a-sphere src="#back" position="0 0 5" title="Crossing"
       animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
-      link="href:../crossing/crossing.html; on:click" text="Crossing">
+      link="href:crossing.html; on:click" text="Crossing">
     </a-sphere>
 
     <!-- carriglea 360 image applied -->
@@ -67,7 +67,7 @@
     <a-entity id="map" visible="false">
       <!--      Image of map    -->
       <a-image id="map_image"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/iadt_map.JPG?v=1664232277444"
+        src="assets/iadt_map.JPG"
         position="0 0 -10" width="20" height="13">
       </a-image>
       <!-- marks where user is -->
@@ -140,7 +140,7 @@
     <a-box id="box1" material="transparent:true;" position="-15 -4 -10" rotation="-50 50 0" depth="0" width="2"
       height="2" scale="1 1 .1" color="#FF0000">
       <a-image id="map_icon"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/map_icon.png?v=1664233866018"
+        src="assets/map_icon.png"
         position="0.070 -0.280 1.440" scale="4 4 4" transparent="true"></a-image>
       <a-text rel="stylesheet" font="kelsonsans" value="View Map of Campus" color="#2D3142" width="5" scale="3 3 3"
         position="-2.787 2.369 1.904"></a-text>
@@ -175,8 +175,8 @@
     </a-entity>
 
     <!--       links to js -->
-    <script src="../map.js"></script>
-    <script src="app.js"></script>
+    <script src="map.js"></script>
+    <script src="carriglea/app.js"></script>
   </a-scene>
 </body>
 
