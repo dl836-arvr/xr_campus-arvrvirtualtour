@@ -15,7 +15,7 @@ key_locations.forEach(key_location => {
   key_location.addEventListener('click', e => {
     console.log(key_location.id)
     let location = key_location.id
-    window.location.replace(`/${location}.html`)
+    window.location.replace(`${location}.html`)
     
   })
 })
