@@ -13,14 +13,14 @@
     <a-assets>
       <!--         courtyard image -->
       <img id="quadcourtyard"
-        src="https://cdn.glitch.global/9d1089e4-54f6-42c1-9488-e87e538dd1b4/quad_court.jpg?v=1664185388706"
+        src="assets/quad_court.jpg"
         crossorigin="anonymous">
       <!--         iadt map -->
-      <img id="iadtMap" src="https://cdn.glitch.global/90038d6d-c444-45ac-90a8-248b06873061/map.png?v=1664205630442"
+      <img id="iadtMap" src="assets/iadt_map.JPG"
         crossorigin="anonymous">
       <!--         quad image for sphere link -->
       <img id="quadbuilding"
-        src="https://cdn.glitch.global/9d1089e4-54f6-42c1-9488-e87e538dd1b4/quad.jpg?v=1664187828479"
+        src="assets/quad.jpg"
         crossorigin="anonymous">
     </a-assets>
 
@@ -35,7 +35,7 @@
     <a-entity>
       <a-sphere radius="1.25" position="-1 5 -10" src="#quadbuilding"
         animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
-        link="href:../quad/quad.html; on:click">
+        link="href:quad.html; on:click">
       </a-sphere>
       <a-text font="kelsonsans" value="Quad" width="6" position="-1.2 3.8 -8" rotation="0 0 0" color="white">
       </a-text>
@@ -121,7 +121,7 @@
 
       <!--      Image of map    -->
       <a-image id="map_image"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/iadt_map.JPG?v=1664232277444"
+        src="assets/iadt_map.JPG"
         position="0 0 -10" width="20" height="13">
       </a-image>
       <!--         The here tag of whereever the user is  -->
@@ -195,16 +195,16 @@
 
       <!--         Image of map icon -->
       <a-image id="map_icon"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/map_icon.png?v=1664233866018"
+        src="assets/map_icon.png"
         position="0.070 -0.280 1.440" scale="4 4 4" transparent="true"></a-image>
       <a-text rel="stylesheet" font="kelsonsans" value="View Map of Campus" color="#2D3142" width="5" scale="3 3 3"
         position="-2.787 2.369 1.904"></a-text>
 
     </a-box>
 
-    <script src="../map.js"></script>
+    <script src="map.js"></script>
 
-    <script src="buttons.js"></script>
+    <script src="quadcourt/buttons.js"></script>
 
     <a-sky src="#quadcourtyard" rotation="0 90 0"></a-sky>
 

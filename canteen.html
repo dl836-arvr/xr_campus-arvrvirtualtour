@@ -10,7 +10,7 @@
     <!--asset loader-->
     <a-assets>
       <img id="canteen_img"
-        src="../assets/canteen.jpg"
+        src="assets/canteen.jpg"
         crossorigin="anonymous" />
     </a-assets>
     <!-- camera with cursor-->
@@ -38,7 +38,7 @@
       </a-box>
     </a-entity>
 
-    <script src="info.js"></script>
+    <script src="canteen/info.js"></script>
 
 
     <!-- MAP -->
@@ -46,7 +46,7 @@
     <a-entity id="map" visible="false">
       <!--      Image of map    -->
       <a-image id="map_image"
-        src="../assets/iadt_map.JPG"
+        src="assets/iadt_map.JPG"
         position="0 0 -10" width="20" height="13">
       </a-image>
       <!--         The here tag of whereever the user is  -->
@@ -117,21 +117,21 @@
     <a-box id="box1" position="-15 -4 -10" rotation="-50 50 0" depth="0" width="2" height="2" scale="1 1 .1"
       color="#FF0000">
       <a-image id="map_icon"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/map_icon.png?v=1664233866018"
+        src="assets/map_icon.png"
         position="0.070 -0.280 1.440" scale="4 4 4"></a-image>
       <a-text rel="stylesheet" font="kelsonsans" value="View Map of Campus" color="#ffff" width="5" scale="3 3 3"
         position="-2.787 2.369 1.904"></a-text>
     </a-box>
 
-    <script src="/map.js"></script>
+    <script src="map.js"></script>
 
 
     <!--       Sphere -->
     <a-entity>
       <a-sphere radius="1.5" position="-16 0.084 -13.995"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/atrium.jpg?v=1664219643872"
+        src="assets/atrium.jpg"
         animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
-        link="href:../atrium/atrium.html; on:click">
+        link="href:atrium.html; on:click">
       </a-sphere>
       <a-text font="kelsonsans" value="Atrium" width="6.5" scale="2 2 2" position="-14 1.7 -11.105" rotation="0 30 0"
         color="#ffff">

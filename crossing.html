@@ -20,12 +20,12 @@
       <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
       <!-- Image Assets. -->
       <img id="Crossing"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/crossing.jpg?v=1664219656307" />
+        src="assets/crossing.jpg" />
       <!--Carriglea-->
       <img id="forward"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/carrig.jpg?v=1664219651826" />
+        src="assets/carrig.jpg" />
       <!--Courtyard-->
-      <img id="back" src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/court.jpg?v=1664219654413" />
+      <img id="back" src="assets/court.jpg" />
     </a-assets>
     <!-- camera positioning -->
     <a-entity position="0 0 0">
@@ -73,13 +73,13 @@
     <!--spinning sphere with courtyard image -->
 
     <a-text value="Carriglea" width="4" position="-2.606 1.547 -14.665" rotation="0 180 0" color="#ff6900"
-      link="href:../carriglea/carriglea.html; on:click" scale="1.5 1.5 1.5"></a-text>
+      link="href:carriglea.html; on:click" scale="1.5 1.5 1.5"></a-text>
 
     <!--       spinning sphere with carriglea image -->
 
     <a-sphere src="#forward" position="-2.606 1.547 -13" title="Carriglea"
       animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
-      link="href:../carriglea/carriglea.html; on:click" text="Carriglea">
+      link="href:carriglea.html; on:click" text="Carriglea">
     </a-sphere>
 
     <!-- Courtyard text with sphere -->
@@ -88,7 +88,7 @@
 
     <!--       spinning sphere with courtyard image -->
     <a-sphere src="#back" position="-0.537 1.221 12.062" title="Courtyard"
-      link="href:../courtyard/courtyard.html; on:click"
+      link="href:courtyard.html; on:click"
       animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
       text="Quad">
     </a-sphere>
@@ -99,7 +99,7 @@
     <a-entity id="map" visible="false" position="-6.3 5 -6.2" rotation="0 45 0">
       <!--      Image of map    -->
       <a-image id="map_image"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/iadt_map.JPG?v=1664232277444"
+        src="assets/iadt_map.JPG"
         position="0 0 -10" width="20" height="13">
       </a-image>
 
@@ -172,15 +172,15 @@
     <a-box id="box1" material="transparent:true;" position="-15 -4 -10" rotation="-50 50 0" depth="0" width="2"
       height="2" scale="1 1 .1" color="#FF0000">
       <a-image id="map_icon"
-        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/map_icon.png?v=1664233866018"
+        src="assets/map_icon.png"
         position="0.070 -0.280 1.440" scale="4 4 4" transparent="true"></a-image>
       <a-text rel="stylesheet" font="kelsonsans" value="View Map of Campus" color="#FF5733" width="5" scale="3 3 3"
         position="-2.787 2.369 1.904"></a-text>
     </a-box>
 
     <!--       links to js -->
-    <script src="../map.js"></script>
-    <script src="app.js"></script>
+    <script src="map.js"></script>
+    <script src="crossing/app.js"></script>
   </a-scene>
 </body>
 
