@@ -1,0 +1,180 @@
+<!-- This section was Written by Ryan Golden, N00150620 -->
+
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+
+        <a-assets>
+            <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+            <img id="atriumImage" src="../assets/atrium.jpg" crossorigin="anonymous">
+            <img id="canteenImage" src="../assets/canteen.jpg" crossorigin="anonymous">
+            <img id="iadtMapImage" src="../assets/map.png" crossorigin="anonymous">
+            <img id="courtyardImage" src="../assets/court.jpg" crossorigin="anonymous">
+        </a-assets>
+
+        <!-- <a-assets>
+            <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+            <img id="atriumImage"
+                src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/atrium.jpg?v=1664219643872"
+                crossorigin="anonymous">
+            <img id="canteenImage"
+                src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/canteen.jpg?v=1664219650152"
+                crossorigin="anonymous">
+            <img id="iadtMapImage"
+                src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/map.png?v=1664219868752"
+                crossorigin="anonymous">
+            <img id="courtyardImage"
+                src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/court.jpg?v=1664219654413"
+                crossorigin="anonymous">
+        </a-assets> -->
+
+        <a-entity position="0 0 0">
+            <a-camera camera look-controls>
+                <a-cursor material="color: #000000;"></a-cursor>
+            </a-camera>
+        </a-entity>
+
+        <!-- Adding various details to the scene -->
+        <a-text font="kelsonsans" value="Atrium" width="15" position="-0.7 3 -5" rotation="0 -3 0" color="#000000">
+        </a-text>
+
+        <!-- Info Box to display information about the Atrium that only appears once the button is clicked -->
+        <a-entity id="info" visible="false">
+            <a-entity>
+                <a-plane material="transparent: true;" position="4.480 0.099 -10" rotation="0 -22 90" width="5.510"
+                    height="11.530" color="#0082c0" depthwrite="false">
+                </a-plane>
+                <a-plane material="transparent: true;" position="4.480 0.099 -9.99" rotation="0 -22 90" width="5.2"
+                    height="11.2" color="#FFFFFF" depthwrite="false">
+                </a-plane>
+            </a-entity>
+            <a-text font="kelsonsans"
+                value="The Atrium is the central hub of the IADT campus, it contains the canteen, library, health centre as well computer labs and lecture facilities. As part of the ongoing campus development we worked on environmental design for the Atrium with the Estates and Facilities department."
+                width="10" height="20" position="4.4 0.1 -9.97" rotation="0 -22 0" color="#000000" align="center">
+            </a-text>
+        </a-entity>
+
+        <!-- Adding a toggleable map to the scene -->
+        <a-entity id="map" visible="false">
+
+            <a-image src="#iadtMapImage" position="-9.22 0.099 -9.99" align="center" rotation="0 45 0" width="20"
+                height="15">
+            </a-image>
+            <a-entity>
+                <a-plane position="-9.23 0.099 -10" align="center" rotation="0 45 0" width="20.5" height="15.5"
+                    color="#0082c0">
+                </a-plane>
+                <a-sphere position="-9.431 -0.223 -9.300" radius="0.25" color="orange">
+                </a-sphere>
+                <a-text font="kelsonsans" value="You are here!" position="-9.431 -0.6 -9.300" rotation="0 45 0"
+                    align="center" color="black">
+                </a-text>
+
+                <!-- Adding links to the Map so the user can access any part of the Virtual Tour -->
+                <a-entity position="-2.1 -0.743 -2.999" rotation="0 45 0">
+                    <a-box id="courtyard" material="transparent:true;" position="-8.544 -1.0 -9.934" rotation="0 0 0"
+                        depth="0" width="1" height="0.3" scale="2 2 .1" color="#0183c1" name="key_locations">
+                        <a-text rel="stylesheet" value="Courtyard" color="black" width="6" scale="1 1 1"
+                            position="0.491 0.002 0.017">
+                        </a-text>
+                    </a-box>
+                    <a-box id="atrium" material="transparent:true;" position="-8.544 -1.8 -9.934" rotation="0 0 0"
+                        depth="0" width="1" height="0.3" scale="2 2 .1" color="#0183c1" name="key_locations">
+                        <a-text rel="stylesheet" value="Atrium" color="black" width="6" scale="1 1 1"
+                            position="0.491 0.002 0.017">
+                        </a-text>
+                    </a-box>
+                    <a-box id="carriglea" material="transparent:true;" position="-8.544 -2.6 -9.934" rotation="0 0 0"
+                        depth="0" width="1" height="0.3" scale="2 2 .1" color="#0183c1" name="key_locations">
+                        <a-text rel="stylesheet" value="Carriglea" color="black" width="6" scale="1 1 1"
+                            position="0.491 0.002 0.017">
+                        </a-text>
+                    </a-box>
+                    <a-box id="quad" material="transparent:true;" position="-8.544 -3.4 -9.934" rotation="0 0 0"
+                        depth="0" width="1" height="0.3" scale="2 2 .1" color="#0183c1" name="key_locations">
+                        <a-text rel="stylesheet" value="Quad" color="black" width="6" scale="1 1 1"
+                            position="0.491 0.002 0.017">
+                        </a-text>
+                    </a-box>
+                    <a-box id="quadcourt" material="transparent:true;" position="-8.544 -4.2 -9.934" rotation="0 0 0"
+                        depth="0" width="1" height="0.3" scale="2 2 .1" color="#0183c1" name="key_locations">
+                        <a-text rel="stylesheet" value="Quad Court" color="black" width="6" scale="1 1 1"
+                            position="0.491 0.002 0.017">
+                        </a-text>
+                    </a-box>
+                    <a-box id="crossing" material="transparent:true;" position="-8.544 -5.0 -9.934" rotation="0 0 0"
+                        depth="0" width="1" height="0.3" scale="2 2 .1" color="#0183c1" name="key_locations">
+                        <a-text rel="stylesheet" value="Crossing" color="black" width="6" scale="1 1 1"
+                            position="0.491 0.002 0.017">
+                        </a-text>
+                    </a-box>
+                    <a-box id="canteen" material="transparent:true;" position="-8.544 -5.8 -9.934" rotation="0 0 0"
+                        depth="0" width="1" height="0.3" scale="2 2 .1" color="#0183c1" name="key_locations">
+                        <a-text rel="stylesheet" value="Canteen" color="black" width="6" scale="1 1 1"
+                            position="0.491 0.002 0.017">
+                        </a-text>
+                    </a-box>
+                </a-entity>
+
+            </a-entity>
+        </a-entity>
+
+        <!-- Adding button to display and hide the map -->
+        <a-entity>
+            <a-box position="-5.399 -5 -5.807" rotation="-50 45 0" width="1.3" height="1.3" depth="0.1"
+                shader="standard">
+            </a-box>
+            <a-sphere id="displayMap" position="-5.399 -5 -5.807" radius="1" scale="0.5 0.5 0.5" color="#FF0000"
+                shader="standard">
+            </a-sphere>
+            <a-text font="kelsonsans" value="Click this button for a map of Campus!" position="-5.399 -4 -5.807"
+                rotation="-50 45 0" align="center" color="black">
+            </a-text>
+        </a-entity>
+
+        <!-- Adding button to display and hide the Atrium information -->
+        <a-entity>
+            <a-box position="3.92308 -5 -9.41879" rotation="-50 -24.75 0" width="1.3" height="1.3" depth="0.1"
+                shader="standard">
+            </a-box>
+            <a-sphere id="atriumInfo" position="3.92308 -5 -9.41879" radius="1" scale="0.5 0.5 0.5" color="#FF0000"
+                shader="standard">
+            </a-sphere>
+            <a-text font="kelsonsans" value="Click this button for Information!" position="3.92308 -4 -9.41879"
+                rotation="-50 -24.75 0" align="center" color="black">
+            </a-text>
+        </a-entity>
+
+        <script src="info.js"></script>
+
+        <!-- Link To the Canteen + Courtyard -->
+        <a-entity>
+            <a-sphere radius="1.5" position="-1.111 1.32 15.788" src="#canteenImage"
+                animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+                link="href:../canteen/canteen.html; on:click">
+            </a-sphere>
+            <a-text font="kelsonsans" value="Canteen" width="6.5" position="-0.264 1.173 12.388" rotation="0 170 0"
+                color="#000000">
+            </a-text>
+
+            <!-- Link to the Courtyard -->
+            <a-sphere radius="1.5" position="20.111 2.32 -3" src="#courtyardImage"
+                animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+                link="href:../courtyard/courtyard.html; on:click">
+            </a-sphere>
+            <a-text font="kelsonsans" value="Courtyard" width="7" position="16.111 1.90 -3" rotation="0 310 0"
+                color="#000000">
+            </a-text>
+        </a-entity>
+
+        <a-sky src="#atriumImage" rotation="0 -90 0"></a-sky>
+
+    </a-scene>
+</body>
+
+</html>

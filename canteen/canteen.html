@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <!--asset loader-->
+    <a-assets>
+      <img id="canteen_img"
+        src="../assets/canteen.jpg"
+        crossorigin="anonymous" />
+    </a-assets>
+    <!-- camera with cursor-->
+    <a-entity camera look-controls wasd-controls>
+      <a-cursor material="color: #ff40ff;"></a-cursor>
+    </a-entity>
+
+    <!--   Canteen info box and btn     -->
+    <a-entity>
+      <a-text value="Canteen" position="2.550 0.270 -0.230" rotation="0 -120 0" scale="3 3 3"></a-text>
+
+      <a-entity id="info_btn">
+        <a-circle color="#FF5733" radius="0.18" position="2.550 -0.270 -0.230" rotation="0 -120 0">
+          <a-text value="i" position="-0.08 0 0" scale="1.5 1.5 1.5"></a-text>
+        </a-circle>
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="canteen_info" position="2.550 -0.5 1" visible="false">
+      <a-box rotation="0 -120 0" depth="0" width="-2" height="0.8" color="#FF5733">
+        <a-text color="#fffff" width="6" scale="0.3 0.3 0.3" position="-0.881 -0.008 0.02"
+          value="IADT’s restaurant is professionally run by Compass Catering on campus. 
+                   It provides everything our students (and staff) need and is, not surprisingly, a central part of college life. 
+                   Meals are served at breakfast, lunch and early dinner, with a variety of snacks available at any time in between."></a-text>
+      </a-box>
+    </a-entity>
+
+    <script src="info.js"></script>
+
+
+    <!-- MAP -->
+    <!--    Visibility is set to false and when map icon is clicked the visibility is set to false    -->
+    <a-entity id="map" visible="false">
+      <!--      Image of map    -->
+      <a-image id="map_image"
+        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/iadt_map.JPG?v=1664232277444"
+        position="0 0 -10" width="20" height="13">
+      </a-image>
+      <!--         The here tag of whereever the user is  -->
+      <a-circle id="here_tag" color="#FF0000" radius="0.18" position="-0.200 -0.205 -9.915"></a-circle>
+
+      <a-entity>
+        <a-box id="courtyard" position="-8.544 -1.0 -9.934" rotation="0 0 0" depth="0" width="1" height="0.3"
+          scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Courtyard" color="#2D3142" width="6" scale="1 1 1"
+            position="0.491 0.002 0.017"></a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="atrium" material="transparent:true;" position="-8.544 -1.8 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Atrium" color="#2D3142" width="6" scale="1 1 1" position="0.491 0.002 0.017">
+          </a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="carriglea" material="transparent:true;" position="-8.544 -2.6 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Carriglea" color="#2D3142" width="6" scale="1 1 1"
+            position="0.491 0.002 0.017"></a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="quad" material="transparent:true;" position="-8.544 -3.4 -9.934" rotation="0 0 0" depth="0" width="1"
+          height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Quad" color="#2D3142" width="6" scale="1 1 1" position="0.491 0.002 0.017">
+          </a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="quad_court" material="transparent:true;" position="-8.544 -4.2 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Quad Court" color="#2D3142" width="6" scale="1 1 1"
+            position="0.491 0.002 0.017"></a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="crossing" material="transparent:true;" position="-8.544 -5.0 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Crossing" color="#2D3142" width="6" scale="1 1 1"
+            position="0.491 0.002 0.017"></a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="canteen" material="transparent:true;" position="-8.544 -5.8 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Canteen" color="#2D3142" width="6" scale="1 1 1" position="0.491 0.002 0.017">
+          </a-text>
+        </a-box>
+      </a-entity>
+
+      <a-circle color="#FF0000" radius="0.1" position="6.243 -5.885 -9.972" scale="2 2 1">
+        <a-text rel="stylesheet" value="You are here" color="#f10e0e" width="6" scale="1 1 1" position="0.150 0 0">
+        </a-text>
+      </a-circle>
+    </a-entity>
+
+    <a-box id="box1" position="-15 -4 -10" rotation="-50 50 0" depth="0" width="2" height="2" scale="1 1 .1"
+      color="#FF0000">
+      <a-image id="map_icon"
+        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/map_icon.png?v=1664233866018"
+        position="0.070 -0.280 1.440" scale="4 4 4"></a-image>
+      <a-text rel="stylesheet" font="kelsonsans" value="View Map of Campus" color="#ffff" width="5" scale="3 3 3"
+        position="-2.787 2.369 1.904"></a-text>
+    </a-box>
+
+    <script src="/map.js"></script>
+
+
+    <!--       Sphere -->
+    <a-entity>
+      <a-sphere radius="1.5" position="-16 0.084 -13.995"
+        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/atrium.jpg?v=1664219643872"
+        animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+        link="href:../atrium/atrium.html; on:click">
+      </a-sphere>
+      <a-text font="kelsonsans" value="Atrium" width="6.5" scale="2 2 2" position="-14 1.7 -11.105" rotation="0 30 0"
+        color="#ffff">
+      </a-text>
+    </a-entity>
+
+    <script>
+      console.log(window.location.pathname);
+    </script>
+
+    <!--a sky primitive-->
+    <a-sky src="#canteen_img" rotation="0 -90 0"></a-sky>
+  </a-scene>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!-- Coded by Conor Kilbride -->
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+
+</head>
+
+<body>
+  <a-scene>
+
+    <!--assets at the top of scene-->
+    <a-assets>
+      <!--         courtyard image -->
+      <img id="quadcourtyard"
+        src="https://cdn.glitch.global/9d1089e4-54f6-42c1-9488-e87e538dd1b4/quad_court.jpg?v=1664185388706"
+        crossorigin="anonymous">
+      <!--         iadt map -->
+      <img id="iadtMap" src="https://cdn.glitch.global/90038d6d-c444-45ac-90a8-248b06873061/map.png?v=1664205630442"
+        crossorigin="anonymous">
+      <!--         quad image for sphere link -->
+      <img id="quadbuilding"
+        src="https://cdn.glitch.global/9d1089e4-54f6-42c1-9488-e87e538dd1b4/quad.jpg?v=1664187828479"
+        crossorigin="anonymous">
+    </a-assets>
+
+    <!-- camera with cursor-->
+    <a-entity rotation="0 0 0">
+      <a-camera camera look-controls>
+        <a-cursor material="color: white;"></a-cursor>
+      </a-camera>
+    </a-entity>
+
+    <!-- Link To the Quad -->
+    <a-entity>
+      <a-sphere radius="1.25" position="-1 5 -10" src="#quadbuilding"
+        animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+        link="href:../quad/quad.html; on:click">
+      </a-sphere>
+      <a-text font="kelsonsans" value="Quad" width="6" position="-1.2 3.8 -8" rotation="0 0 0" color="white">
+      </a-text>
+    </a-entity>
+
+    <!-- Info Box about the Quad Courtyard -->
+    <a-entity id="info" visible="false" position="-3.130 -5.170 0.850" rotation="0.050 2.700 -1.390">
+      <a-entity>
+        <a-plane material="transparent: true;" position="15 11.5 8" rotation="0 -120 91" width="5.510" height="11.530"
+          color="blue" depthwrite="false">
+        </a-plane>
+        <a-plane material="transparent: true;" position="15 11.5 7.95" rotation="0 -120 91" width="5.3" height="11.2"
+          color="white" depthwrite="false">
+        </a-plane>
+      </a-entity>
+      <a-text font="kelsonsans"
+        value="The Quad courtyard is surrounded by the Quadrangle building, where the art and film courses take place. It can be very busy during lunch hours, with students gathering around the benches."
+        width="9.6" height="20" position="13.5 11 7" rotation="0 -120 1" color="#000000" align="center">
+      </a-text>
+    </a-entity>
+
+    <!-- Map you can toggle -->
+    <!--       <a-entity id="map" visible="false" position="-13 10.5 -5.807">
+        <a-image src="#iadtMap"
+        align="center"
+        rotation="20 65 0"
+        width="20"
+        height="15">
+        </a-image>
+        <a-entity>
+          <a-sphere
+            position="1 -1.7 -1.4 "
+            radius=".4"
+            color="blue">
+          </a-sphere>
+          <a-text
+            font="kelsonsans"
+            value="You are here!"
+            position="1 -2.4 -.8"
+            rotation="0 45 0"
+            align="center"
+            color="black">
+          </a-text>
+        </a-entity>
+      </a-entity> -->
+
+    <!-- button to toggle the map -->
+    <!--       <a-entity 
+          position="-13 2 -5.807"
+          rotation="0 70 0">
+        <a-sphere 
+         id="displayMap" 
+         radius="1"
+         scale="0.5 0.5 0.5" 
+         color="blue"
+         shader="standard">
+        </a-sphere>
+        <a-text 
+         font="kelsonsans" 
+         value="Click for a map of the Campus!" 
+         position= "-0.2 -0.6 5.812" 
+         rotation="0 -15 -2" 
+         align="center"
+         color="white">
+        </a-text>
+      </a-entity> -->
+
+    <!-- button to toggle information box -->
+    <a-entity position="-3.130 -5.170 0.850" rotation="0.050 2.700 -1.390">
+      <a-sphere id="quadInfo" position="13 6.25 7" radius="1" scale="0.5 0.5 0.5" color="red" shader="standard">
+      </a-sphere>
+      <a-box position="13 6.25 7" rotation="0 45 0" width="1.3" height="1.3" depth="0.1" shader="standard">
+      </a-box>
+      <a-text font="kelsonsans" value="Click this button for Information!" position="7.5 5.8 3" rotation="0 -120 0"
+        align="center" color="black">
+      </a-text>
+    </a-entity>
+
+    <!-- MAP -->
+
+    <!--    Visibility is set to false and when map icon is clicked the visibility is set to false    -->
+    <a-entity id="map" visible="false" position="-19.437 5.086 -7.648" rotation="20 70 0">
+
+      <!--      Image of map    -->
+      <a-image id="map_image"
+        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/iadt_map.JPG?v=1664232277444"
+        position="0 0 -10" width="20" height="13">
+      </a-image>
+      <!--         The here tag of whereever the user is  -->
+      <a-circle id="here_tag" color="#FF0000" radius="0.18" position="1.954 -0.918 -9.356"></a-circle>
+
+      <a-entity>
+        <a-box id="courtyard" material="transparent:true;" position="-8.544 -1.0 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Courtyard" color="#2D3142" width="6" scale="1 1 1"
+            position="0.491 0.002 0.017"></a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="atrium" material="transparent:true;" position="-8.544 -1.8 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Atrium" color="#2D3142" width="6" scale="1 1 1" position="0.491 0.002 0.017">
+          </a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="carriglea" material="transparent:true;" position="-8.544 -2.6 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Carriglea" color="#2D3142" width="6" scale="1 1 1"
+            position="0.491 0.002 0.017"></a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="quad" material="transparent:true;" position="-8.544 -3.4 -9.934" rotation="0 0 0" depth="0" width="1"
+          height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Quad" color="#2D3142" width="6" scale="1 1 1" position="0.491 0.002 0.017">
+          </a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="quadcourt" material="transparent:true;" position="-8.544 -4.2 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Quad Court" color="#2D3142" width="6" scale="1 1 1"
+            position="0.491 0.002 0.017"></a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="crossing" material="transparent:true;" position="-8.544 -5.0 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Crossing" color="#2D3142" width="6" scale="1 1 1"
+            position="0.491 0.002 0.017"></a-text>
+        </a-box>
+      </a-entity>
+
+      <a-entity>
+        <a-box id="canteen" material="transparent:true;" position="-8.544 -5.8 -9.934" rotation="0 0 0" depth="0"
+          width="1" height="0.3" scale="2 2 .1" color="#7D8CC4" name="key_locations">
+          <a-text rel="stylesheet" value="Canteen" color="#2D3142" width="6" scale="1 1 1" position="0.491 0.002 0.017">
+          </a-text>
+        </a-box>
+      </a-entity>
+
+      <a-circle color="#FF0000" radius="0.1" position="6.243 -5.885 -9.972" scale="2 2 1">
+        <a-text rel="stylesheet" value="You are here" color="#f10e0e" width="6" scale="1 1 1" position="0.150 0 0">
+        </a-text>
+      </a-circle>
+
+    </a-entity>
+
+    <a-box id="box1" material="transparent:true;" position="-29.808 1.155 -9.990" rotation="20 65 0" depth="0" width="2"
+      height="2" scale="1 1 .1" color="#FF0000">
+
+      <!--         Image of map icon -->
+      <a-image id="map_icon"
+        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/map_icon.png?v=1664233866018"
+        position="0.070 -0.280 1.440" scale="4 4 4" transparent="true"></a-image>
+      <a-text rel="stylesheet" font="kelsonsans" value="View Map of Campus" color="#2D3142" width="5" scale="3 3 3"
+        position="-2.787 2.369 1.904"></a-text>
+
+    </a-box>
+
+    <script src="../map.js"></script>
+
+    <script src="buttons.js"></script>
+
+    <a-sky src="#quadcourtyard" rotation="0 90 0"></a-sky>
+
+  </a-scene>
+</body>
+
+</html>

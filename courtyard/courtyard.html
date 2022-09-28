@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <!--asset loader-->
+    <a-assets>
+      <img id="Courtyard" src="../assets/court.jpg"
+        crossOrigin="anonymous" />
+
+    </a-assets>
+    <!-- camera with cursor-->
+    <a-entity camera look-controls wasd-controls>
+      <a-cursor material="color: #ff40ff;"></a-cursor>
+    </a-entity>
+
+    <a-entity>
+      <!-- Link to atrium -->
+      <a-sphere radius="1.5" position="2.976 0.084 -21.296"
+        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/atrium.jpg?v=1664219643872"
+        animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+        link="href:../atrium/atrium.html; on:click">
+      </a-sphere>
+      <a-text font="kelsonsans" value="Atrium" width="6.5" scale="2 2 2" position="2.094 2.098 -20.279"
+        rotation="0 10 0" color="#ffff">
+      </a-text>
+      <!-- Link to quad -->
+      <a-sphere radius="1.5" position="7.577 -0.900 9.923"
+        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/quad.jpg?v=1664219657679"
+        animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+        link="href:../quad/quad.html; on:click">
+      </a-sphere>
+      <a-text font="kelsonsans" value="Quad" width="6.5" scale="2 2 2" position="8.179 0.982 9.659" rotation="0 -130 0"
+        color="#ffff">
+      </a-text>
+      <!-- Link to crossing -->
+      <a-sphere radius="1.5" position="-21.534 0.478 2.018"
+        src="https://cdn.glitch.global/05415e58-398e-4dd5-ab38-2e4d16e7e37c/crossing.jpg?v=1664219656307"
+        animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+        link="href:../crossing/crossing.html; on:click">
+      </a-sphere>
+      <a-text font="kelsonsans" value="Crossing" width="6.5" scale="2 2 2" position="-21.124 -2 3.145"
+        rotation="0 100 0" color="#ffff">
+      </a-text>
+    </a-entity>
+
+    <!--a text primitive-->
+    <a-text font="kelsonsans" value="Courtyard" width="6" position="-5 1.9 -4.9" rotation="0 30 0" text=""
+      scale="3.5 3.5 3.5"></a-text>
+    <a-entity id="info_btn">
+      <a-circle color="#FF5733" radius="0.27" position="-5 1 -4.9" rotation="0 35 0">
+        <a-text value="i" position="-0.15 0 0" scale="2.5 2.5 2.5"></a-text>
+      </a-circle>
+    </a-entity>
+
+    <a-entity id="iadt_info" position="-1.5 -0.1 -2.8" visible="true">
+      <a-box rotation="0 30 0" depth="0" width="-2" height="0.9" color="#FF5733">
+        <a-text color="#fffff" width="6" scale="0.3 0.3 0.3" position="-0.881 0.310 0.02" value="WELCOME TO IADT">
+        </a-text>
+        <a-text color="#fffff" width="6" scale="0.3 0.3 0.3" position="-0.881 -0.008 0.02" value="IADT is unique in that it is Ireland’s only Institute of Art, 
+                   Design and Technology with a specific aim to lead and inform the creative, 
+                   cultural and technological industries through learning, teaching, research and innovation.">
+        </a-text>
+        <!--           <a-text            
+            color="#fffff"
+            width="6"
+            scale="0.3 0.3 0.3"
+            position="-0.881 -0.36 0.02"      
+            value="Click for more information">
+          </a-text> -->
+      </a-box>
+    </a-entity>
+
+    <!--a sky primitive-->
+    <a-sky src="#Courtyard" rotation="0 -90 0">
+      </a-sky->
+
+
+
+
+
+  </a-scene>
+</body>
+
+</html>
