@@ -16,6 +16,5 @@ key_locations.forEach(key_location => {
     console.log(key_location.id)
     let location = key_location.id
     window.location.replace(`https://dl836-arvr.github.io/xr_campus-arvrvirtualtour/${location}.html`)
-    
   })
 })
